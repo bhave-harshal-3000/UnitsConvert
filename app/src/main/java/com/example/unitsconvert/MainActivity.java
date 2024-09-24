@@ -108,9 +108,9 @@ public class MainActivity extends AppCompatActivity {
         outputvalue.setTextColor(Color.BLACK);
 
 
-        float inputValue;
+        Double inputValue;
         try {
-            inputValue = Float.parseFloat(inputText);
+            inputValue = Double.parseDouble(inputText);
         } catch (NumberFormatException e) {
             outputvalue.setTextColor(Color.RED);
             outputvalue.setText("Invalid input. Please enter a valid number.");
