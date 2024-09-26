@@ -137,6 +137,10 @@ public class MainActivity extends AppCompatActivity {
             result = inputValue * 1.60934f; // miles to km
         } else if (inputUnit.equals("km") && outputUnit.equals("miles")) {
             result = inputValue / 1.60934f; // km to miles
+        }else if (inputUnit.equals("miles") && outputUnit.equals("m")) {
+            result = inputValue *  1609.34f; // km to miles
+        }else if (inputUnit.equals("m") && outputUnit.equals("miles")) {
+            result = inputValue / 1609.34f; // km to miles
         }
 
         else if (inputUnit.equals("Celsius") && outputUnit.equals("Fahrenheit")) {
