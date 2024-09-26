@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         
 
-        // Set up spinner with options
+        
         String[] tempUnits = {"Select unit","Celsius", "Fahrenheit", "Kelvin"};
         String[] lengthUnits = {"km", "m", "miles"};
         String[] timeUnits = {"Seconds", "Minutes", "Hours"};
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        // Set up the convert button action
+        
         convertbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,51 +129,52 @@ public class MainActivity extends AppCompatActivity {
             }
         outputvalue.setTextColor(Color.BLACK);
 
+        
         if (inputUnit.equals("km") && outputUnit.equals("m")) {
-            result = inputValue * 1000; // km to m
+            result = inputValue * 1000; 
         } else if (inputUnit.equals("m") && outputUnit.equals("km")) {
-            result = inputValue / 1000; // m to km
+            result = inputValue / 1000; 
         } else if (inputUnit.equals("miles") && outputUnit.equals("km")) {
-            result = inputValue * 1.60934f; // miles to km
+            result = inputValue * 1.60934f; 
         } else if (inputUnit.equals("km") && outputUnit.equals("miles")) {
-            result = inputValue / 1.60934f; // km to miles
+            result = inputValue / 1.60934f; 
         }else if (inputUnit.equals("miles") && outputUnit.equals("m")) {
-            result = inputValue *  1609.34f; // km to miles
+            result = inputValue *  1609.34f; 
         }else if (inputUnit.equals("m") && outputUnit.equals("miles")) {
-            result = inputValue / 1609.34f; // km to miles
+            result = inputValue / 1609.34f;
         }
 
         else if (inputUnit.equals("Celsius") && outputUnit.equals("Fahrenheit")) {
-            result = (inputValue * 9/5) + 32; // Celsius to Fahrenheit
+            result = (inputValue * 9/5) + 32;
         } else if (inputUnit.equals("Celsius") && outputUnit.equals("Kelvin")) {
-            result = inputValue + 273.15; // Celsius to Kelvin
+            result = inputValue + 273.15; 
         } else if (inputUnit.equals("Fahrenheit") && outputUnit.equals("Celsius")) {
-            result = (inputValue - 32) * 5/9; // Fahrenheit to Celsius
+            result = (inputValue - 32) * 5/9; 
         } else if (inputUnit.equals("Fahrenheit") && outputUnit.equals("Kelvin")) {
-            result = (inputValue - 32) * 5/9 + 273.15; // Fahrenheit to Kelvin
+            result = (inputValue - 32) * 5/9 + 273.15; 
         } else if (inputUnit.equals("Kelvin") && outputUnit.equals("Celsius")) {
-            result = inputValue - 273.15; // Kelvin to Celsius
+            result = inputValue - 273.15; 
         } else if (inputUnit.equals("Kelvin") && outputUnit.equals("Fahrenheit")) {
-            result = (inputValue - 273.15) * 9/5 + 32; // Kelvin to Fahrenheit
+            result = (inputValue - 273.15) * 9/5 + 32; 
         }
 
         else if (inputUnit.equals("Seconds") && outputUnit.equals("Minutes")) {
-            result = inputValue / 60; // Seconds to Minutes
+            result = inputValue / 60; 
         } else if (inputUnit.equals("Seconds") && outputUnit.equals("Hours")) {
-            result = inputValue / 3600; // Seconds to Hours
+            result = inputValue / 3600; 
         } else if (inputUnit.equals("Minutes") && outputUnit.equals("Seconds")) {
-            result = inputValue * 60; // Minutes to Seconds
+            result = inputValue * 60;
         } else if (inputUnit.equals("Minutes") && outputUnit.equals("Hours")) {
-            result = inputValue / 60; // Minutes to Hours
+            result = inputValue / 60; 
         } else if (inputUnit.equals("Hours") && outputUnit.equals("Seconds")) {
-            result = inputValue * 3600; // Hours to Seconds
+            result = inputValue * 3600;
         } else if (inputUnit.equals("Hours") && outputUnit.equals("Minutes")) {
-            result = inputValue * 60; // Hours to Minutes
+            result = inputValue * 60; 
         }else {
-            result = inputValue; // Same units, no conversion needed
+            result = inputValue; 
         }
 
-        // Display the result
+        
         outputvalue.setText(String.format("= %.5f %s",result,outputUnit));
     }
 }
